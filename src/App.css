@@ -62,7 +62,7 @@ header .container img{
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  top: 55%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -173,7 +173,7 @@ header .container img{
     width: 30px;
   }
   .todos{
-    top: 45%;
+    top: 55%;
     padding: 0 1rem;
   }
 }
