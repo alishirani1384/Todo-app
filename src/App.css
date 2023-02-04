@@ -128,8 +128,8 @@ header .container img{
   display: block;
   border: 2px solid var(--Dark-Grayish-Blue);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
 }
 .todo[data-completed="true"]{
   text-decoration: line-through;
