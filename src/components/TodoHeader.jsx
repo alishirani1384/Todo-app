@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import sun from '../assets/images/icon-sun.svg';
 import moon from '../assets/images/icon-moon.svg';
 import { ThemeContext } from '../App';
+import Todos from './Todos';
 
 
 function TodoHeader() {
@@ -19,6 +20,7 @@ function TodoHeader() {
               <h1 className="title">TODO</h1>
               <img src={theme=="dark"?sun:moon} alt="icon" onClick={handleClick}/>
           </div>
+          <Todos/>
     </header>
   )
 }

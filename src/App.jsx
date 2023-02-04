@@ -14,7 +14,6 @@ function App() {
     <ThemeContext.Provider value={{theme,setTheme}}>
       <div className="App" data-theme={theme}>
         <TodoHeader />
-        <Todos/>
     </div>
     </ThemeContext.Provider>
   )

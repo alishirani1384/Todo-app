@@ -37,6 +37,7 @@ header{
   justify-content: center;
   height: 300px;
   width: 100%;
+  position: relative;
 }
 header .container{
   max-width: 700px;
@@ -58,13 +59,13 @@ header .container img{
 .todos{
   max-width: 700px;
   width: 100%;
-  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  top: 65%;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,10%);
 }
 .todo-input{
   max-width: 700px;
@@ -173,7 +174,7 @@ header .container img{
     width: 30px;
   }
   .todos{
-    top: 55%;
+    bottom: 20%;
     padding: 0 1rem;
   }
 }
