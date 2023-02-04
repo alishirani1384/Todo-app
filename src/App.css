@@ -154,6 +154,18 @@ header .container img{
 .footer .status p{
   font-weight: 700;
 }
+.App[data-theme="light"] .todo-list{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.App[data-theme="light"] .todo-input{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.App[data-theme="light"] .todo{
+  color: var(--Very-Dark-Grayish-Blue-2);
+}
+.App[data-theme="light"] .todo[data-completed="true"]{
+  color: var(--Dark-Grayish-Blue-light-theme);
+}
 @media screen and (max-width:700px) {
   header{
     height: 200px;
