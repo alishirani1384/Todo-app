@@ -62,7 +62,7 @@ header .container img{
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -70,16 +70,20 @@ header .container img{
   max-width: 700px;
   width: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  padding: 1.5rem;
+  border-radius: 7px;
 }
 .todo-input input{
   width: 100%;
-  padding: 1.5rem;
-  padding-left: 3rem;
-  border-radius: 7px;
   border: none;
   font-size: 1.2rem;
   background-color: var(--Very-Dark-Desaturated-Blue);
   color: white;
+  display: flex;
 }
 .todo-input input:focus{
   outline: none;
@@ -87,13 +91,12 @@ header .container img{
 .todo-input .mark{
   border: 2px solid var(--Dark-Grayish-Blue);
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 4%;
-  transform: translate(-50%,-50%);
   border-radius: 50%;
   width: 25px;
   height: 25px;
+}
+.App[data-theme="light"] .todo-input{
+  background-color: white;
 }
 .App[data-theme="light"] input{
   background-color: white;
@@ -104,6 +107,9 @@ header .container img{
   display: flex;
   flex-direction: column;
   border-radius: 7px;
+}
+.App[data-theme="light"] .todo-list{
+  background-color: white;
 }
 .todo{
   padding: 1.5rem;
@@ -128,6 +134,24 @@ header .container img{
   color: var(--Dark-Grayish-Blue);
   transition: all .3s;
 }
+.footer{
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  justify-content: space-between;
+}
+.footer p{
+  color: var(--Dark-Grayish-Blue);
+  cursor: pointer;
+}
+.footer .status{
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.footer .status p{
+  font-weight: 700;
+}
 @media screen and (max-width:700px) {
   header{
     height: 200px;
@@ -149,7 +173,7 @@ header .container img{
     width: 30px;
   }
   .todos{
-    top: 40%;
+    top: 45%;
     padding: 0 1rem;
   }
 }

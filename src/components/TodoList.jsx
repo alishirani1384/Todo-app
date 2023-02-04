@@ -34,7 +34,16 @@ function TodoList() {
               todos.map(todo => {
                   return <Todo text={todo.txt} completed={todo.completed} />
               })
-         } 
+          } 
+          <div className="footer">
+              <p className="lenght">{todos.filter(todo => todo.completed == false).length} Items left</p>
+              <div className="status">
+                  <p>All</p>
+                  <p>Active</p>
+                  <p>Completed</p>
+              </div>
+              <p className="clear">Clear completed</p>
+          </div>
     </div>
     )
     
