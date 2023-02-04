@@ -55,6 +55,47 @@ header .container img{
   cursor: pointer;
   width: 35px;
 }
+.todos{
+  max-width: 700px;
+  width: 100%;
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.todo-input{
+  max-width: 700px;
+  width: 100%;
+  position: relative;
+}
+.todo-input input{
+  width: 100%;
+  padding: 1rem;
+  padding-left: 3rem;
+  border-radius: 7px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  color: white;
+}
+.todo-input input:focus{
+  outline: none;
+}
+.todo-input .mark{
+  border: 2px solid var(--Dark-Grayish-Blue);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.App[data-theme="light"] input{
+  background-color: white;
+  color: black;
+}
 @media screen and (max-width:700px) {
   header{
     height: 200px;
@@ -74,5 +115,9 @@ header .container img{
   }
   header .container img{
     width: 30px;
+  }
+  .todos{
+    top: 13%;
+    padding: 0 1rem;
   }
 }

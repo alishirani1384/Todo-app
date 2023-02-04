@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import './App.css';
 import TodoHeader from './components/TodoHeader';
+import Todos from './components/Todos';
 
 export const ThemeContext = createContext(null);
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
       <div className="App" data-theme={theme}>
-      <TodoHeader/>
+        <TodoHeader />
+        <Todos/>
     </div>
     </ThemeContext.Provider>
   )
