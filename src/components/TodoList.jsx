@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Todo from './Todo'
 
-function TodoList() {
+function TodoList({newTodo}) {
     const [todos,setTodos] = useState([
         {
             txt: "Complete online javascript course",
@@ -28,11 +28,17 @@ function TodoList() {
             completed:false
         },
     ])
+    useEffect(() => {
+        if (newTodo) {
+            setTodos(pre =>[...pre,newTodo])
+        }
+        
+    },[newTodo])
   return (
       <div className='todo-list'>
           {
-              todos.map(todo => {
-                  return <Todo text={todo.txt} completed={todo.completed} />
+              todos.map((todo,i) => {
+                  return <Todo key={i} text={todo.txt} completed={todo.completed} />
               })
           } 
           <div className="footer">

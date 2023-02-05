@@ -1,7 +1,7 @@
 :root{
   /* primary colors */
   --Bright-Blue: hsl(220, 98%, 61%);
-  --Check-Background: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+  --Check-Background: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
   /* Light Theme */
   --Very-Light-Gray: hsl(0, 0%, 98%);
   --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
@@ -18,7 +18,11 @@
   --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
 }
 .App{
-  min-height: 100vh;
+  min-height: 110vh;
+}
+
+.App[data-theme="dark"]{
+  background-color: var(--Very-Dark-Blue);
 }
 .App[data-theme="dark"]{
   background-color: var(--Very-Dark-Blue);
@@ -136,6 +140,17 @@ header .container img{
   color: var(--Dark-Grayish-Blue);
   transition: all .3s;
 }
+.todo[data-completed="true"]::before{
+  content: url("./assets/images/icon-check.svg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--Check-Background);
+  border-color: var(--Very-Dark-Desaturated-Blue);
+}
+.App[data-theme="light"] .todo[data-completed="true"]::before{
+  border-color: white;
+}
 .footer{
   display: flex;
   align-items: center;
@@ -189,5 +204,6 @@ header .container img{
   .todos{
     bottom: 20%;
     padding: 0 1rem;
+    
   }
 }

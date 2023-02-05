@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'
 
 function Todos() {
+  const [newTodo, setNewTodo] = useState()
+  console.log(newTodo)
   return (
       <div className='todos'>
-          <TodoInput />
-          <TodoList/>
+          <TodoInput setNewTodo={setNewTodo} />
+          <TodoList newTodo={newTodo} />
       </div>
   )
 }
