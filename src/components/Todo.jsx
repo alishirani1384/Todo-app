@@ -1,20 +1,23 @@
-import React, { useRef } from 'react';
+import React, { useCallback } from 'react';
 
 
-function Todo({ text, completed }) {
-    const element = useRef(null);
-    function handleClick(e) {
+function Todo({ text, completed, id, setTodos, todos }) {
+    const handleClick = useCallback((e) => {
+        const todoArray = [...todos];
         if (e.target.dataset.completed == "true") {
-            e.target.dataset.completed = "false";
+            todoArray[id].completed = false;
+            setTodos(todoArray)
         } else {
-            e.target.dataset.completed = "true";
+            todoArray[id].completed = true;
+            setTodos(todoArray)
         }
-    }
-  return (
-      <p className='todo' onClick={handleClick} ref={element} data-completed={completed}>
-          {text}
-      </p>
-  )
+    },
+        [completed])
+    return (
+        <p className='todo' onClick={handleClick} data-completed={completed}>
+            {text}
+        </p>
+    )
 }
 
 export default Todo

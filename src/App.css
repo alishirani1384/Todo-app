@@ -1,7 +1,7 @@
-:root{
+:root {
   /* primary colors */
   --Bright-Blue: hsl(220, 98%, 61%);
-  --Check-Background: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+  --Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   /* Light Theme */
   --Very-Light-Gray: hsl(0, 0%, 98%);
   --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
@@ -17,23 +17,23 @@
   --Very-Dark-Grayish-Blue-1: hsl(233, 14%, 35%);
   --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
 }
-.App{
+.App {
   min-height: 110vh;
 }
 
-.App[data-theme="dark"]{
+.App[data-theme="dark"] {
   background-color: var(--Very-Dark-Blue);
 }
-.App[data-theme="dark"]{
+.App[data-theme="dark"] {
   background-color: var(--Very-Dark-Blue);
 }
-.App[data-theme="dark"] header{
+.App[data-theme="dark"] header {
   background-image: url("./assets/images/bg-desktop-dark.jpg");
 }
-.App[data-theme="light"] header{
+.App[data-theme="light"] header {
   background-image: url("./assets/images/bg-desktop-light.jpg");
 }
-header{
+header {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -43,7 +43,7 @@ header{
   width: 100%;
   position: relative;
 }
-header .container{
+header .container {
   max-width: 700px;
   width: 100%;
   display: flex;
@@ -51,16 +51,16 @@ header .container{
   justify-content: space-between;
   margin-bottom: 2rem;
 }
-header .container .title{
+header .container .title {
   font-size: 3rem;
   color: white;
   letter-spacing: 1rem;
 }
-header .container img{
+header .container img {
   cursor: pointer;
   width: 35px;
 }
-.todos{
+.todos {
   max-width: 700px;
   width: 100%;
   display: flex;
@@ -69,9 +69,9 @@ header .container img{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,10%);
+  transform: translate(-50%, 10%);
 }
-.todo-input{
+.todo-input {
   max-width: 700px;
   width: 100%;
   position: relative;
@@ -82,7 +82,7 @@ header .container img{
   padding: 1.5rem;
   border-radius: 7px;
 }
-.todo-input input{
+.todo-input input {
   width: 100%;
   border: none;
   font-size: 1.2rem;
@@ -91,33 +91,33 @@ header .container img{
   display: flex;
   align-items: center;
 }
-.todo-input input:focus{
+.todo-input input:focus {
   outline: none;
 }
-.todo-input .mark{
+.todo-input .mark {
   border: 2px solid var(--Dark-Grayish-Blue);
   display: block;
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
 }
-.App[data-theme="light"] .todo-input{
+.App[data-theme="light"] .todo-input {
   background-color: white;
 }
-.App[data-theme="light"] input{
+.App[data-theme="light"] input {
   background-color: white;
   color: black;
 }
-.todo-list{
+.todo-list {
   background-color: var(--Very-Dark-Desaturated-Blue);
   display: flex;
   flex-direction: column;
   border-radius: 7px;
 }
-.App[data-theme="light"] .todo-list{
+.App[data-theme="light"] .todo-list {
   background-color: white;
 }
-.todo{
+.todo {
   padding: 1.5rem;
   border-bottom: 1px solid var(--Very-Dark-Grayish-Blue-1);
   display: flex;
@@ -127,7 +127,7 @@ header .container img{
   color: var(--Light-Grayish-Blue);
   cursor: pointer;
 }
-.todo::before{
+.todo::before {
   content: "";
   display: block;
   border: 2px solid var(--Dark-Grayish-Blue);
@@ -135,12 +135,22 @@ header .container img{
   min-width: 30px;
   min-height: 30px;
 }
-.todo[data-completed="true"]{
+.todo::after {
+  content: url("./assets/images/icon-cross.svg");
+  margin-left: auto;
+  display: none;
+  z-index: 2;
+  cursor: auto;
+}
+.todo:hover::after {
+  display: block;
+}
+.todo[data-completed="true"] {
   text-decoration: line-through;
   color: var(--Dark-Grayish-Blue);
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.todo[data-completed="true"]::before{
+.todo[data-completed="true"]::before {
   content: url("./assets/images/icon-check.svg");
   display: flex;
   align-items: center;
@@ -148,62 +158,61 @@ header .container img{
   background: var(--Check-Background);
   border-color: var(--Very-Dark-Desaturated-Blue);
 }
-.App[data-theme="light"] .todo[data-completed="true"]::before{
+.App[data-theme="light"] .todo[data-completed="true"]::before {
   border-color: white;
 }
-.footer{
+.footer {
   display: flex;
   align-items: center;
   padding: 1.5rem 1rem;
   justify-content: space-between;
 }
-.footer p{
+.footer p {
   color: var(--Dark-Grayish-Blue);
   cursor: pointer;
 }
-.footer .status{
+.footer .status {
   display: flex;
   align-items: center;
-  gap: .8rem;
+  gap: 0.8rem;
 }
-.footer .status p{
+.footer .status p {
   font-weight: 700;
 }
-.App[data-theme="light"] .todo-list{
+.App[data-theme="light"] .todo-list {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.App[data-theme="light"] .todo-input{
+.App[data-theme="light"] .todo-input {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.App[data-theme="light"] .todo{
+.App[data-theme="light"] .todo {
   color: var(--Very-Dark-Grayish-Blue-2);
 }
-.App[data-theme="light"] .todo[data-completed="true"]{
+.App[data-theme="light"] .todo[data-completed="true"] {
   color: var(--Dark-Grayish-Blue-light-theme);
 }
-@media screen and (max-width:700px) {
-  header{
+@media screen and (max-width: 700px) {
+  header {
     height: 200px;
     background-position: center;
   }
-  .App[data-theme="dark"] header{
-  background-image: url("./assets/images/bg-mobile-dark.jpg");
+  .App[data-theme="dark"] header {
+    background-image: url("./assets/images/bg-mobile-dark.jpg");
   }
-  .App[data-theme="light"] header{
-  background-image: url("./assets/images/bg-mobile-light.jpg");
+  .App[data-theme="light"] header {
+    background-image: url("./assets/images/bg-mobile-light.jpg");
   }
-  header .container{
+  header .container {
     margin: 0 1rem 6rem 1rem;
   }
-  header .container .title{
+  header .container .title {
     font-size: 2rem;
   }
-  header .container img{
+  header .container img {
     width: 30px;
   }
-  .todos{
+  .todos {
     bottom: 20%;
     padding: 0 1rem;
-    
   }
 }
