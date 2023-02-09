@@ -127,6 +127,19 @@ header .container img {
   color: var(--Light-Grayish-Blue);
   cursor: pointer;
 }
+
+.todo .delete{
+  margin-left: auto;
+  display: none;
+  cursor: url("./assets/images/trash-2.svg"),auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+.todo:hover .delete{
+  display: flex;
+}
 .char {
   display: block;
 }
@@ -138,16 +151,7 @@ header .container img {
   min-width: 30px;
   min-height: 30px;
 }
-.todo::after {
-  content: url("./assets/images/icon-cross.svg");
-  margin-left: auto;
-  display: none;
-  z-index: 2;
-  cursor: auto;
-}
-.todo:hover::after {
-  display: block;
-}
+
 .todo[data-completed="true"] {
   text-decoration: line-through;
   color: var(--Dark-Grayish-Blue);
@@ -213,6 +217,9 @@ header .container img {
   }
   header .container img {
     width: 30px;
+  }
+  .todo .delete{
+    display: flex;
   }
   .todos {
     bottom: 20%;

@@ -1,10 +1,11 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import DeleteIcon from "../assets/images/icon-cross.svg"
 
 
-function Todo({ text, completed, index, setTodos, todos }) {
+function Todo({ text, completed, index,id, setTodos, todos }) {
     const handleClick = (e) => {
         const todoArray = [...todos];
-        if (e.target.dataset.completed == "true") {
+        if (e.target.parentElement.dataset.completed == "true") {
             todoArray[index].completed = false;
             setTodos(todoArray)
         } else {
@@ -12,12 +13,20 @@ function Todo({ text, completed, index, setTodos, todos }) {
             setTodos(todoArray)
         }
     }
+    const handleDelete = () => {
+        const newTodos = todos.filter(todo => todo.id !== id)
+        setTodos(newTodos)
+    }
 
     return (
         <li className='todo' data-completed={completed}>
             <p onClick={handleClick}>
                 {text}
             </p>
+            <div className='delete' onClick={handleDelete}>
+                <img src={DeleteIcon} alt="delete" />
+            </div>
+            
         </li>
     )
 }
