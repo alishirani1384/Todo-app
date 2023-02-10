@@ -1,9 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import Todo from './Todo'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
 function TodoList({ newTodo }) {
-    const [todos, setTodos] = useState(initialTasks)
+    const [todos, setTodos] = useState(initialTasks);
+    const [filter,setFilter] = useState(todos);
+    const reduser = (state, action) => {
+        const notcompleted = filter.filter(todo => todo.completed == false);
+        const completed = filter.filter(todo => todo.completed == true);
+        switch (action.type) {
+            case "ALL": return setTodos(filter);
+            case "ACTIVE": return setTodos(notcompleted);
+            case "COMPLETED": return setTodos(completed);
+                
+        }
+    }
+    const [state,dispatch]=useReducer(reduser,todos)
     useEffect(() => {
         if (newTodo) {
             setTodos(pre => [...pre, newTodo])
@@ -52,9 +64,9 @@ function TodoList({ newTodo }) {
             <div className="footer">
                 <p className="lenght">{todos.filter(todo => todo.completed == false).length} Items left</p>
                 <div className="status">
-                    <p>All</p>
-                    <p>Active</p>
-                    <p>Completed</p>
+                    <p onClick={()=>dispatch({type:"ALL"})}>All</p>
+                    <p onClick={()=>dispatch({type:"ACTIVE"})}>Active</p>
+                    <p onClick={() => dispatch({ type: "COMPLETED" })}>Completed</p>
                 </div>
                 <p className="clear" onClick={() => setTodos(todos.filter(todo => !todo.completed))}>Clear completed</p>
             </div>
